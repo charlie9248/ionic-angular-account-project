@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='/account-list'></ion-back-button>
+    </ion-buttons>
+    <ion-title>account-details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+
+    <ion-input type='number' [(ngModel)]='amount' margin placeholder="deposit amount"></ion-input>
+    <ion-button (click)="onDepsitSubmit(singleAccount.id ,amount)">deposit</ion-button>
+    <ion-button (click)="onWithDraw(singleAccount.id ,amount)">Withdrwa</ion-button>
+  </ion-item>
+<div  *ngIf="singleAccount">
+  <ion-item >
+    <ion-label >
+      Acc No :{{singleAccount.accountNumber}}
+    </ion-label>
+  </ion-item>
+  <ion-item >
+    <ion-label >
+     Acc Name : {{singleAccount.name}}
+    </ion-label>
+  </ion-item>
+  <ion-item >
+    <ion-label >
+     Overdraft : {{singleAccount.overdraft}}
+    </ion-label>
+  </ion-item>
+  <ion-item >
+    <ion-label >
+     Balance : {{singleAccount.balance}}
+    </ion-label>
+  </ion-item>
+</div>
+</ion-content>

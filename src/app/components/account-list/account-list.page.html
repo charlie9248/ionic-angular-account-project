@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color='primary'>
+    <ion-title class="ion-text-center">Account List</ion-title>
+    <ion-button (click)="addAcount()">
+      <ion-icon  slot="icon-only" name="person-circle"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngIf="accounts.length > 0">
+    <ion-item  *ngFor='let  account  of accounts' [routerLink]="['./' , account.id]">
+    <ion-label class="ion-text-left"> <ion-text class="text">Acc name :</ion-text> {{ account.name  }}</ion-label>
+    <ion-label class="ion-text-right"> <ion-text class="text">Balance :</ion-text> R{{account.balance === null ? 0 : account.balance }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
